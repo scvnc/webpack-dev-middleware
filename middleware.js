@@ -13,6 +13,8 @@ module.exports = function(compiler, options) {
 	if(typeof options.stats === "undefined") options.stats = {};
 	if(!options.stats.context) options.stats.context = process.cwd();
 
+	if (!compiler.outputPath) compiler.outputPath = "/";
+
 	// store our files in memory
 	var files = {};
 	var fs = compiler.outputFileSystem = new MemoryFileSystem();
